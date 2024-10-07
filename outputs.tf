@@ -3,12 +3,12 @@ output "availability_zones" {
   value       = local.vpc_availability_zones
 }
 
-output "availability_zone_ids" {
-  description = "List of Availability Zones IDs where subnets were created, when available"
-  value = local.use_az_ids ? var.availability_zone_ids : [
-    for az in local.vpc_availability_zones : local.az_name_map[az]
-  ]
-}
+#output "availability_zone_ids" {
+#  description = "List of Availability Zones IDs where subnets were created, when available"
+#  value = local.use_az_ids ? var.availability_zone_ids : [
+#    for az in local.vpc_availability_zones : local.az_name_map[az]
+#  ]
+#}
 
 output "public_subnet_ids" {
   description = "IDs of the created public subnets"
